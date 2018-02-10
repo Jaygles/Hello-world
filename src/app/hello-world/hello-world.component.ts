@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/fromPromise';
 
 let emitter;
 const observable = Observable.create(e => emitter = e);
@@ -39,7 +40,6 @@ export class HelloWorldComponent implements OnInit {
 
   getWeather() {
     Observable.of(this.http.get(this.url).subscribe(res => {
-      console.log(res);
       this.title = JSON.stringify(res);
     }));
   }
