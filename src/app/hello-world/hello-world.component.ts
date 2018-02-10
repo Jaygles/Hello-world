@@ -38,15 +38,9 @@ export class HelloWorldComponent implements OnInit {
   constructor(private http: HttpClient) {
   }
 
-  getWeather() {
-    Observable.of(this.http.get(this.url).subscribe(res => {
-      this.title = JSON.stringify(res);
-    }));
-  }
-
   ngOnInit(): void {
     this.http.get(this.url).subscribe(data => {
-      console.log(data);
+      this.title = JSON.stringify(data);
     });
   }
 }
