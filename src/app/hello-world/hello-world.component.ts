@@ -22,9 +22,6 @@ observable.subscribe(observer);
 emitter.next('Hello world');
 emitter.complete();
 
-const weather = Observable.of();
-weather.subscribe(observer);
-
 @Component({
   selector: 'app-hello-world',
   templateUrl: './hello-world.component.html',
